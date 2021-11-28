@@ -68,6 +68,8 @@ dependencies {
 
 
     // Compose
+    implementation 'androidx.activity:activity-compose:1.3.1'
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation "androidx.compose.runtime:runtime:$rootProject.compose_version"
     implementation "androidx.compose.ui:ui:$rootProject.compose_version"
     implementation "androidx.compose.foundation:foundation:$rootProject.compose_version"
@@ -76,6 +78,9 @@ dependencies {
     implementation "androidx.compose.runtime:runtime-livedata:$rootProject.compose_version"
     implementation "androidx.compose.ui:ui-tooling:$rootProject.compose_version"
     implementation "com.google.android.material:compose-theme-adapter:$rootProject.compose_version"
+    implementation "androidx.navigation:navigation-compose:2.4.0-beta02"
+    implementation "androidx.hilt:hilt-navigation-compose:1.0.0-beta01"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
 }
 // Allow references to generated code
 kapt {
