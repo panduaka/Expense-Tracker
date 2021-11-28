@@ -6,6 +6,7 @@ import com.example.expensetracker.feature_expense.data.data_source.ExpenseDataba
 import com.example.expensetracker.feature_expense.data.data_source.ExpenseDatabase.Companion.DATABASE_NAME
 import com.example.expensetracker.feature_expense.data.repository.ExpenseRepositoryImpl
 import com.example.expensetracker.feature_expense.domain.repository.ExpenseRepository
+import com.example.expensetracker.feature_expense.domain.use_case.AddExpenseUseCase
 import com.example.expensetracker.feature_expense.domain.use_case.DeleteExpenseUseCase
 import com.example.expensetracker.feature_expense.domain.use_case.ExpenseUseCases
 import com.example.expensetracker.feature_expense.domain.use_case.GetExpensesUseCase
@@ -40,7 +41,8 @@ object AppModules {
     fun provideExpenseUseCases(repository: ExpenseRepository): ExpenseUseCases {
         return ExpenseUseCases(
             getExpensesUseCase = GetExpensesUseCase(repository),
-            deleteExpenseUseCase = DeleteExpenseUseCase(repository)
+            deleteExpenseUseCase = DeleteExpenseUseCase(repository),
+            addExpenseUseCase = AddExpenseUseCase(repository)
         )
     }
 
