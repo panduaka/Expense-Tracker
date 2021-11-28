@@ -24,7 +24,7 @@ import androidx.core.graphics.ColorUtils
 import com.example.expensetracker.feature_expense.domain.model.ExpenseModel
 
 @Composable
-fun NoteItem(
+fun ExpenseItem(
     expense: ExpenseModel,
     modifier: Modifier = Modifier,
     cornerRadius: Dp = 10.dp,
@@ -87,7 +87,7 @@ fun NoteItem(
         ) {
             Icon(
                 imageVector = Icons.Default.Delete,
-                contentDescription = "Delete note",
+                contentDescription = "Delete",
                 tint = MaterialTheme.colors.onSurface
             )
         }
