@@ -14,10 +14,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.expensetracker.feature_expense.presentation.show_expense.ExpensesViewModel
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.expensetracker.feature_expense.presentation.ExpenseEvent
+import com.example.expensetracker.feature_expense.presentation.show_expense.ExpensesViewModel
 import com.example.expensetracker.feature_expense.presentation.util.Screen
 import kotlinx.coroutines.launch
 
@@ -31,7 +31,6 @@ fun ExpenseScreen(
     val state = viewModel.state.value
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
-
 
     Scaffold(
         floatingActionButton = {
@@ -96,14 +95,14 @@ fun ExpenseScreen(
                             .clickable {
                                 navController.navigate(
                                     Screen.AddExpenseScreen.route +
-                                            "?noteId=${expenseModel.id}&noteColor=${expenseModel.color}"
+                                            "?expenseId=${expenseModel.id}&expenseColor=${expenseModel.color}"
                                 )
                             },
                         onDeleteClick = {
-                            viewModel.onEvent(ExpenseEvent.DeleteNote(expenseModel))
+                            viewModel.onEvent(ExpenseEvent.DeleteExpense(expenseModel))
                             scope.launch {
-                                val result = scaffoldState.snackbarHostState.showSnackbar(
-                                    message = "Note deleted"
+                                scaffoldState.snackbarHostState.showSnackbar(
+                                    message = "Expense deleted"
                                 )
                             }
                         }

@@ -13,6 +13,6 @@ data class ExpenseModel(
     @PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id") val id: Int,
 ) {
     companion object {
-        val noteColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
+        val expenseColors = listOf(RedOrange, LightGreen, Violet, BabyBlue, RedPink)
     }
 }
