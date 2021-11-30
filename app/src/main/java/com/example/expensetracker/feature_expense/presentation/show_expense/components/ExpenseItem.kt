@@ -27,8 +27,8 @@ import com.example.expensetracker.feature_expense.domain.model.ExpenseModel
 fun ExpenseItem(
     expense: ExpenseModel,
     modifier: Modifier = Modifier,
-    cornerRadius: Dp = 10.dp,
-    cutCornerSize: Dp = 30.dp,
+    cornerRadius: Dp = 5.dp,
+    cutCornerSize: Dp = 10.dp,
     onDeleteClick: () -> Unit
 ) {
     Box(
@@ -66,8 +66,16 @@ fun ExpenseItem(
                 .padding(end = 32.dp)
         ) {
             Text(
-                text = expense.amount.toString(),
-                style = MaterialTheme.typography.body1,
+                text = expense.title,
+                style = MaterialTheme.typography.h6,
+                color = MaterialTheme.colors.onSurface,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "SGD " + expense.amount.toString(),
+                style = MaterialTheme.typography.subtitle1,
                 color = MaterialTheme.colors.onSurface,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
