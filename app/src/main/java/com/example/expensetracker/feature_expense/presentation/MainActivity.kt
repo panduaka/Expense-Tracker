@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                         }
                         composable(
                             route = Screen.AddExpenseScreen.route +
-                                    "?expenseId={expenseId}&noteColor={expenseColor}",
+                                    "?expenseId={expenseId}&expenseColor={expenseColor}",
                             arguments = listOf(
                                 navArgument(
                                     name = "expenseId"
