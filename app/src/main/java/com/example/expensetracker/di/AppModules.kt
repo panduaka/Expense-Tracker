@@ -24,7 +24,8 @@ object AppModules {
             app,
             ExpenseDatabase::class.java,
             DATABASE_NAME
-        ).build()
+        ).fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides

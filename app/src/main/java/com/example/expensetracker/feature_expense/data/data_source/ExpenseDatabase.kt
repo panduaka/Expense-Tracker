@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.example.expensetracker.feature_expense.domain.model.ExpenseModel
 
 @Database(
-    entities = [ExpenseModel::class], version = 1, exportSchema = false
+    entities = [ExpenseModel::class], version = 2, exportSchema = false
 )
 abstract class ExpenseDatabase : RoomDatabase() {
     abstract val expenseDao: ExpenseDao
