@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.expensetracker.feature_expense.domain.model.ExpenseModel
+import com.example.expensetracker.feature_expense.presentation.add_expense.components.CategorySelection
 import com.example.expensetracker.feature_expense.presentation.add_expense.components.TransparentHintAmountField
 import com.example.expensetracker.feature_expense.presentation.add_expense.components.TransparentHintTextField
 import kotlinx.coroutines.flow.collectLatest
@@ -155,8 +156,10 @@ fun AddEditExpenseScreen(
                 },
                 isHintVisible = categoryState.isHintVisible,
                 textStyle = MaterialTheme.typography.body1,
-                modifier = Modifier.fillMaxHeight()
+//                modifier = Modifier.fillMaxHeight()
             )
+            Spacer(modifier = Modifier.height(16.dp))
+            CategorySelection()
         }
     }
 }

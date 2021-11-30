@@ -5,6 +5,6 @@ import com.example.expensetracker.feature_expense.domain.util.ExpenseOrder
 
 sealed class ExpenseEvent {
     data class Order(val expenseOrder: ExpenseOrder) : ExpenseEvent()
-    data class DeleteNote(val expense: ExpenseModel) : ExpenseEvent()
+    data class DeleteExpense(val expense: ExpenseModel) : ExpenseEvent()
     object ToggleOrderSection : ExpenseEvent()
 }

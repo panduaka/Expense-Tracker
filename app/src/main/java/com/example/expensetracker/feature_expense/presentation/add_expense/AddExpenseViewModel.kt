@@ -121,7 +121,7 @@ class AddExpenseViewModel @Inject constructor(
                             ExpenseModel(
                                 title = expenseTitle.value.text,
                                 category = category.value.text,
-                                amount = 24.00,
+                                amount = amount.value.text.toDouble(),
                                 color = expenseColor.value,
                                 id = currentExpenseId
                             )

@@ -37,7 +37,7 @@ class ExpensesViewModel @Inject constructor(
                 }
                 getExpenses(event.expenseOrder)
             }
-            is ExpenseEvent.DeleteNote -> {
+            is ExpenseEvent.DeleteExpense -> {
                 viewModelScope.launch {
                     expenseUseCases.deleteExpenseUseCase(event.expense)
                 }
